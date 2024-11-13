@@ -1,12 +1,26 @@
 # SD_Proj02
-/*
- * SD-19
- * Jiarong Li 58177
- * Xiaoji Wu 59800
- * Jiaxin Huang 60808
- */
 
-Olá professor,
+# Autores
+- Jiarong Li       fc58177
+- Xiaoji Wu        fc59800
+- Jiaxin Huang     fc60808
+
+# Project Overview
+Este projeto implementa um sistema cliente-servidor em C para gerenciamento de uma hash table, que armazena pares chave-valor e é acessível através de sockets TCP. O servidor mantém a estrutura de dados hash table em memória, enquanto o cliente se comunica com ele para realizar operações. Para a serialização e de-serialização dos dados trocados entre cliente e servidor, foi utilizado o Protocol Buffers, substituindo a abordagem de serialização manual adotada na primeira fase do projeto.
+
+O objetivo principal é permitir que o cliente realize operações na tabela hash armazenada no servidor, como inserção, remoção, consulta e listagem de chaves.
+
+# Estrutura do Projeto
+
+- include/: Contém ficheiros de cabeçalho (.h)
+- source/: Contém ficheiros de código fonte (.c)
+- object/: Diretório para ficheiros de objetos
+- binary/: Diretório para ficheiros executáveis
+- dependencies/: Diretório para ficheiros de dependências necessários para a compilação e execução do projeto.
+- proto/: Contém os ficheiros de definição do Protocol Buffers (.proto) usados para serialização dos dados.
+
+
+# Detalhes sobre a execução do programa
 Neste projeto 2, conseguimos compilar o código sem nenhum problema. 
  No entanto, 
  em algumas funcionalidades e respostas do sistema, 
@@ -94,9 +108,14 @@ Projeto 2:
     56
     Command: q
     Bye, bye!
-------------------------------------------------
-------------------------------------------------
 
-Fim.
+## Notas de Implementação
+- A comunicação cliente-servidor é feita utilizando sockets TCP.
+- Utilizamos Protocol Buffers para serializar e desserializar mensagens trocadas entre o cliente e o servidor.
+- O gerenciamento de memória é cuidadosamente tratado para evitar vazamentos.
+- O sistema atual permite apenas uma conexão de cliente por vez. Suporte para múltiplos clientes será adicionado em fases futuras do projeto.
+
+## Limitações Conhecidas
+- O sistema não possui suporte para concorrência, limitando a utilização a um cliente por vez.
 
 
